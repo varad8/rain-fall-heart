@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heart Rain</title>
+ 
+ <style type="text/css">
+ 
+html,body
+ {
+background-color: #d8dede;
+background-image: linear-gradient(315deg, #d8dede 0%, #e5bdf6 74%);
+ 
+ }
+ 
+ .heart{
+ position: fixed;
+ top: 0px;
+ transform: translateY(0vh);
+ animation: fall 3s linear forwards;
+ transition: all 2s linear;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ @keyframes fall {
+ to{
+ transform: translateY(111vh);
+ }
+ }
+ .heart1{
+ position: fixed;
+ top: 0px;
+ transform: translateY(0vh);
+ animation: rain 2s linear forwards;
+ transition: rain 4s linear;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ @keyframes rain{
+ to{
+ transform: translateY(130vh);
+ }
+ }
+ .heart2{
+ position: fixed;
+ top: 0px;
+ transform: translateY(0vh);
+ animation: rainy 3s linear forwards;
+ transition: rainy 5s linear;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ @keyframes rainy{
+ to{
+ transform: translateY(130vh);
+ }
+ }
+ </style>
+    
+</head>
+
+<body>
+
+    
+    <script>
+function Rain() {
+    const heart = document.createElement('div');
+    const heart1 = document.createElement('div');
+    const heart2 = document.createElement('div');
+    heart.innerText = "💜";
+    heart1.innerText = "♥️";
+    heart2.innerText = "💚️";
+    heart.style.right = Math.random() * 100 + "vw";
+    heart1.style.right = Math.random() *200 + "vw";
+    heart2.style.right = Math.random() *250 + "vw";
+    heart.style.animationDuration = Math.random() * 2 + 4 + "s";
+    heart1.style.animationDuration = Math.random() * 2 + 4 + "s";
+    heart2.style.animationDuration = Math.random() * 2 + 4 + "s";
+    heart.classList.add("heart");
+    heart1.classList.add("heart1");
+    heart2.classList.add("heart1");
+    setTimeout(()=>{
+        heart.remove();
+        heart1.remove();
+        heart2.remove();
+    },5300)
+    document.body.appendChild(heart);
+    document.body.appendChild(heart1);
+    document.body.appendChild(heart2);
+}
+setInterval(Rain, 125);
+    </script>
+</body>
+
+</html>
